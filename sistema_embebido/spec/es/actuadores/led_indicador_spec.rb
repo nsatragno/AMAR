@@ -32,7 +32,7 @@ describe ES do
     end
 
     it "va de cero a cien y vuelve cuando arrancó" do
-      @led_indicador.arrancar!
+      @led_indicador.prender!
       for i in CICLO_MIN..CICLO_MAX do
         expect(@puerto.duty_cycle).to eq(i)
         @led_indicador.actualizar

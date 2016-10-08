@@ -27,17 +27,17 @@ module ES
       @delta = PASO
 
       # Indica si debería animar el led o no.
-      @arranco = false
+      @prendido = false
     end
 
     # Inicia el ciclo del led.
-    def arrancar!
-      @arranco = true
+    def prender!
+      @prendido = true
     end
 
     # Actualiza el led, cambiando su brillo.
     def actualizar
-      return if not @arranco
+      return if not @prendido
       if @puerto.duty_cycle >= CICLO_TRABAJO_MAX then
         @delta = -PASO
       elsif @puerto.duty_cycle <= CICLO_TRABAJO_MIN then
