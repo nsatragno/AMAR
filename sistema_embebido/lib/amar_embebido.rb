@@ -1,3 +1,5 @@
+require "./lib/es/actuadores/led_indicador"
+
 # Envuelve toda la aplicación.
 class Amar
 
@@ -10,7 +12,7 @@ class Amar
     @led_indicador.prender!
 
     while true do
-      @led_indicador = ES::LedIndicador.new
+      @led_indicador.update
     end
   end
 end
