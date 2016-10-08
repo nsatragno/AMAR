@@ -4,3 +4,6 @@ source "https://rubygems.org"
 
 # Controla los puertos GPIO de la Raspberry Pi.
 gem "rpi_gpio"
+
+# Testing.
+gem "rspec"
