@@ -1,18 +1,13 @@
-GIT
-  remote: https://github.com/nicolassatragno/rpi_gpio.git
-  revision: 0832ebd6ad418500e8453e4cd77b13abd117bcc1
-  specs:
-    rpi_gpio (0.3.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
+    rpi_gpio (0.3.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  rpi_gpio!
+  rpi_gpio
 
 BUNDLED WITH
    1.12.5

@@ -3,5 +3,4 @@
 source "https://rubygems.org"
 
 # Controla los puertos GPIO de la Raspberry Pi.
-# TODO arreglar cuando el dueño de la gema la actualice.
-gem "rpi_gpio", :git => 'https://github.com/nicolassatragno/rpi_gpio.git'
+gem "rpi_gpio"
