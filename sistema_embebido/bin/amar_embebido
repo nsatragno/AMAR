@@ -2,4 +2,4 @@
 
 require "./lib/amar_embebido"
 
-Amar.new.run!
+Amar.new.ejecutar!

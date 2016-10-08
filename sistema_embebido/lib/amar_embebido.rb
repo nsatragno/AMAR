@@ -11,11 +11,11 @@ class Amar
   end
 
   # Ejecuta la aplicación.
-  def run!
+  def ejecutar!
     @led_indicador.prender!
 
-    while true do
-      @led_indicador.update
+    loop do
+      @led_indicador.actualizar
     end
   end
 end
