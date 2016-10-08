@@ -1,5 +1,3 @@
-require "./spec/es/rpi_gpio_stub"
-
 require "./lib/es/actuadores/led_indicador"
 
 describe ES do
