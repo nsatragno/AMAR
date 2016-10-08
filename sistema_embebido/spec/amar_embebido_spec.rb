@@ -19,6 +19,8 @@ describe Amar do
     expect(@led_indicador).to receive(:actualizar)
 
     allow(@app).to receive(:loop).and_yield
+    expect(@app).to receive(:sleep).with(Amar::TIEMPO_SLEEP)
+
     @app.ejecutar!
   end
 end
