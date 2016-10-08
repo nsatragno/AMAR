@@ -19,6 +19,8 @@ describe ES do
         @puerto = Mock::PWM.new pin, frecuencia
       end
 
+      expect(RPi::GPIO).to receive(:setup).with(ES::GPIO_PWM, :as => :output)
+
       @led_indicador = LedIndicador.new
 
       expect(@puerto.duty_cycle).to eq(CICLO_MIN)
