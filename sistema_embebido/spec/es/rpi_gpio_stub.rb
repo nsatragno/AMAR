@@ -26,6 +26,16 @@ module Mock
     def initialize(pin, frecuencia)
       @pin = pin
       @frecuencia = frecuencia
+      @running = false
+    end
+
+    def running?
+      @running
+    end
+
+    def start(duty_cycle)
+      @duty_cycle = duty_cycle
+      @running = true
     end
   end
 end

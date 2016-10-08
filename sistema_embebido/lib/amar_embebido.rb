@@ -4,7 +4,7 @@ require "./lib/es/actuadores/led_indicador"
 class Amar
 
   # El tiempo, en segundos, que se espera entre ciclos del bucle de aplicación.
-  TIEMPO_SLEEP = 0.5
+  TIEMPO_SLEEP = 0.05
 
   def initialize
     # La numeración BCM es la misma que está en el break-out de la RPi.

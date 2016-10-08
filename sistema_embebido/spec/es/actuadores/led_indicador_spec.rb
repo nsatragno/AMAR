@@ -20,15 +20,14 @@ describe ES do
       end
 
       expect(RPi::GPIO).to receive(:setup).with(ES::GPIO_PWM, :as => :output)
+      expect(RPi::GPIO).to receive(:set_low).with(ES::GPIO_PWM)
 
       @led_indicador = LedIndicador.new
-
-      expect(@puerto.duty_cycle).to eq(CICLO_MIN)
     end
 
     it "deja el LED apagado cuando todavía no arrancó" do
       @led_indicador.actualizar
-      expect(@puerto.duty_cycle).to eq(CICLO_MIN)
+      expect(@puerto.duty_cycle).to be nil
     end
 
     it "va de cero a cien y vuelve cuando arrancó" do
