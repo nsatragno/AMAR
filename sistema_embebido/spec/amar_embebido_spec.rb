@@ -12,14 +12,32 @@ describe Amar do
     allow(ES::LedIndicador).to receive(:new) { @led_indicador }
 
     @app = Amar.new
+
+    allow(@led_indicador).to receive(:prender!)
+    allow(@led_indicador).to receive(:actualizar)
+    allow(@led_indicador).to receive(:apagar!)
+    allow(RPi::GPIO).to receive(:clean_up)
   end
 
-  it "al ejecutar enciende y actualiza el led indicador" do
+  it "al ejecutar arranca el servidor" do
+    thread = instance_double("Thread")
+    expect(thread).to receive(:alive?).and_return(false)
+    expect(API::Servidor).to receive(:run!).and_return thread
+    allow(Thread).to receive(:new).and_yield
+
+    @app.ejecutar!
+  end
+
+  it "al ejecutar enciende, actualiza y apaga el led indicador" do
+    thread = instance_double("Thread")
+    allow(thread).to receive(:alive?).and_return(true, false)
+    allow(Thread).to receive(:new).and_return thread
+
     expect(@led_indicador).to receive(:prender!)
     expect(@led_indicador).to receive(:actualizar)
-
-    allow(@app).to receive(:loop).and_yield
+    expect(@led_indicador).to receive(:apagar!)
     expect(@app).to receive(:sleep).with(Amar::TIEMPO_SLEEP)
+    expect(RPi::GPIO).to receive(:clean_up)
 
     @app.ejecutar!
   end

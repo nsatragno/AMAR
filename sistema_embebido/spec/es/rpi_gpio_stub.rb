@@ -37,5 +37,9 @@ module Mock
       @duty_cycle = duty_cycle
       @running = true
     end
+     
+    def stop
+      @running = false
+    end
   end
 end
