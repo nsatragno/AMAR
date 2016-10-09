@@ -1,3 +1,4 @@
+require "./lib/api/servidor.rb"
 require "./lib/es/actuadores/led_indicador"
 
 # Envuelve toda la aplicación.
@@ -5,6 +6,9 @@ class Amar
 
   # El tiempo, en segundos, que se espera entre ciclos del bucle de aplicación.
   TIEMPO_SLEEP = 0.05
+
+  # El tiempo máximo en segundos que se espera hasta que se cierre sinatra.
+  API_TIMEOUT = 3
 
   def initialize
     # La numeración BCM es la misma que está en el break-out de la RPi.
@@ -17,10 +21,17 @@ class Amar
   def ejecutar!
     @led_indicador.prender!
 
-    loop do
-      @led_indicador.actualizar
+    # Se ejecuta la API en background.
+    @thread_api = Thread.new do
+      API::Servidor.run!
+    end
 
+    while @thread_api.alive? do
+      @led_indicador.actualizar
       sleep TIEMPO_SLEEP
     end
+
+    # TODO limpiar puertos GPIO.
+    @led_indicador.apagar!
   end
 end

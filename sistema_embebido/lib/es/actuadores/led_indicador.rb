@@ -34,6 +34,10 @@ module ES
       @puerto.start CICLO_TRABAJO_MIN
     end
 
+    def apagar!
+      @puerto.stop
+    end
+
     # Actualiza el led, cambiando su brillo.
     def actualizar
       return if not @puerto.running?

@@ -2,6 +2,10 @@
 # Gemfile para AMAR.
 source "https://rubygems.org"
 
+# Manejan la API.
+gem "sinatra"
+gem "thin"
+
 # Controla los puertos GPIO de la Raspberry Pi.
 gem "rpi_gpio"
 
