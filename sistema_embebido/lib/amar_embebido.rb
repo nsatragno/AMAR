@@ -31,7 +31,7 @@ class Amar
       sleep TIEMPO_SLEEP
     end
 
-    # TODO limpiar puertos GPIO.
     @led_indicador.apagar!
+    RPi::GPIO.clean_up
   end
 end
