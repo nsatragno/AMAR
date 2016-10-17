@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="amar.petsfeeder.MainActivity">
+
+    <TextView
+        android:text="¡Bienvenido, humano!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewMain"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"
+        android:layout_marginTop="27dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Historial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonMainHistory"
+        android:layout_below="@+id/buttonMainTimeScheduler"
+        android:layout_alignLeft="@+id/buttonMainTimeScheduler"
+        android:layout_alignStart="@+id/buttonMainTimeScheduler"
+        android:layout_marginTop="23dp"
+        android:textSize="18sp"
+        android:onClick="openHistory"/>
+
+    <Button
+        android:text="Horarios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:id="@+id/buttonMainTimeScheduler"
+        android:layout_below="@+id/textViewMain"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:onClick="openTimeSchedule"
+        />
+
+    <Button
+        android:text="Configurar IP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonMainIPConfig"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/buttonMainHistory"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:onClick="openIPConfig"/>
+
+    <Button
+        android:text="Acerca de..."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonMainAbout"
+        android:layout_below="@+id/buttonMainIPConfig"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:textSize="18sp"
+        android:onClick="openAbout"
+        />
+
+    <Button
+        android:text="Salir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonMainExit"
+        android:layout_below="@+id/buttonMainAbout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:textSize="18sp" />
+</RelativeLayout>

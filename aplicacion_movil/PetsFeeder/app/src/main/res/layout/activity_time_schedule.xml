@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="amar.petsfeeder.TimeScheduleActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <Button
+        android:text="Cancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/buttonAcceptTimeSchedule"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="51dp"
+        android:layout_marginEnd="51dp"
+        android:id="@+id/buttonCancelTimeSchedule"
+        android:textSize="18sp" />
+
+    <Button
+        android:text="Aceptar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="62dp"
+        android:id="@+id/buttonAcceptTimeSchedule"
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/buttonCancelTimeSchedule"
+        android:layout_toStartOf="@+id/buttonCancelTimeSchedule"
+        android:layout_marginRight="42dp"
+        android:layout_marginEnd="42dp" />
+
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="86dp"
+        android:id="@+id/textClockTimeSchedule1"
+        android:textSize="30sp"
+        android:layout_below="@+id/appBarLayout2"
+        android:layout_alignRight="@+id/buttonAcceptTimeSchedule"
+        android:layout_alignEnd="@+id/buttonAcceptTimeSchedule" />
+
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:id="@+id/textClockTimeSchedule2"
+        android:textSize="30sp"
+        android:layout_below="@+id/textClockTimeSchedule1"
+        android:layout_alignLeft="@+id/textClockTimeSchedule1"
+        android:layout_alignStart="@+id/textClockTimeSchedule1" />
+
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="66dp"
+        android:id="@+id/textClockTimeSchedule3"
+        android:textSize="30sp"
+        android:layout_below="@+id/textClockTimeSchedule2"
+        android:layout_alignLeft="@+id/textClockTimeSchedule2"
+        android:layout_alignStart="@+id/textClockTimeSchedule2" />
+
+    <ToggleButton
+        android:text="ToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="37dp"
+        android:layout_marginEnd="37dp"
+        android:id="@+id/toggleButtonTimeSchedule2"
+        android:layout_alignBaseline="@+id/textClockTimeSchedule2"
+        android:layout_alignBottom="@+id/textClockTimeSchedule2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ToggleButton
+        android:text="ToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toggleButtonTimeSchedule1"
+        android:layout_alignTop="@+id/textClockTimeSchedule1"
+        android:layout_alignLeft="@+id/toggleButtonTimeSchedule2"
+        android:layout_alignStart="@+id/toggleButtonTimeSchedule2" />
+
+    <ToggleButton
+        android:text="ToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toggleButtonTimeSchedule3"
+        android:layout_alignBaseline="@+id/textClockTimeSchedule3"
+        android:layout_alignBottom="@+id/textClockTimeSchedule3"
+        android:layout_alignLeft="@+id/toggleButtonTimeSchedule2"
+        android:layout_alignStart="@+id/toggleButtonTimeSchedule2" />
+
+</RelativeLayout>
