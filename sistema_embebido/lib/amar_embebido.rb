@@ -1,5 +1,6 @@
 require "./lib/api/servidor.rb"
 require "./lib/es/actuadores/led_indicador"
+require "./lib/modelo/estado"
 
 # Envuelve toda la aplicación.
 class Amar

@@ -1,3 +1,5 @@
+require "singleton"
+
 # Modela el estado del dispenser de cereales.
 class Estado
   include Singleton
@@ -14,9 +16,9 @@ class Estado
 
   def to_json
     "{\n" +
-      "recipiente_lleno: #{@recipiente_lleno}\n" +
-      "plato_lleno: #{@plato_lleno}\n" +
-      "recipiente_lleno: #{@detecta_movimiento}\n" +
+      "recipiente_lleno: #{@recipiente_lleno},\n" +
+      "plato_lleno: #{@plato_lleno},\n" +
+      "detecta_movimiento: #{@detecta_movimiento}\n" +
     "}"
   end
 end
