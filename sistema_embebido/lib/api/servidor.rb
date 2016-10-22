@@ -14,6 +14,18 @@ module API
     get '/estado' do
       Estado.instance.to_json
     end
+
+    post '/alimentar' do
+      '"OK"'
+    end
+
+    get '/planificacion' do
+      Planificacion.planificaciones_to_s
+    end
+
+    post '/planificacion' do
+      Planificacion.generar_planificaciones params[:planificacion]
+    end
   end
 
 end
