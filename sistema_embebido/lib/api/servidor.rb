@@ -1,4 +1,5 @@
 require "sinatra"
+require "./modelo/estado"
 
 module API
 
@@ -7,8 +8,8 @@ module API
     set :bind, '0.0.0.0'
     set :port, '3000'
 
-    get '/' do
-      "Hola mundo"
+    get '/estado' do
+      Estado.instance.to_json
     end
   end
 
