@@ -25,6 +25,7 @@ module API
 
     post '/planificacion' do
       Planificacion.generar_planificaciones params[:planificacion]
+      "'OK'"
     end
   end
 

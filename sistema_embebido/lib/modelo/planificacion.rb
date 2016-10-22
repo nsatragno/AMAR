@@ -1,10 +1,7 @@
 # Maneja los horarios en los que se alimenta a la mascota.
 class Planificacion
   def self.planificaciones
-    if @@planificaciones.nil? then
-      @@planificaciones = []
-    end
-    @@planificaciones
+    @@planificaciones ||= []
   end
 
   def self.planificaciones_to_s

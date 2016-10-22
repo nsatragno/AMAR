@@ -2,6 +2,10 @@ require "./lib/modelo/planificacion.rb"
 
 describe Planificacion do
 
+  it "no se rompe si no tiene planificaciones" do
+    expect(Planificacion.planificaciones_to_s).to eq("")
+  end
+
   it "debe inicializar planificaciones a partir de un string" do
     string = "12_14, 23_31, 05_00"
 
