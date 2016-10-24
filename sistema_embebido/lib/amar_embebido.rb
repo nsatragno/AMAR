@@ -1,4 +1,5 @@
 require "./lib/api/servidor.rb"
+require "./lib/es/actuadores/display"
 require "./lib/es/actuadores/led_indicador"
 require "./lib/modelo/estado"
 require "./lib/modelo/planificacion"
@@ -17,6 +18,7 @@ class Amar
     RPi::GPIO.set_numbering :bcm
 
     @led_indicador = ES::LedIndicador.new
+    @display = Display.new
   end
 
   # Ejecuta la aplicación.
@@ -28,8 +30,11 @@ class Amar
       API::Servidor.run!
     end
 
+    @display.mensaje "Este es ab23fffe2 pruebbaa331322 jajaja te agarre"
+
     while @thread_api.alive? do
       @led_indicador.actualizar
+      @display.actualizar
       sleep TIEMPO_SLEEP
     end
 
