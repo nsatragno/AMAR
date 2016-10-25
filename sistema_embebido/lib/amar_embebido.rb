@@ -18,7 +18,7 @@ class Amar
     RPi::GPIO.set_numbering :bcm
 
     @led_indicador = ES::LedIndicador.new
-    @display = Display.new
+    @display = ES::Display.new
   end
 
   # Ejecuta la aplicación.
@@ -30,7 +30,8 @@ class Amar
       API::Servidor.run!
     end
 
-    @display.mensaje "Este es ab23fffe2 pruebbaa331322 jajaja te agarre"
+    @display.mensaje1 "Bienvenido"
+    @display.mensaje2 "Humano"
 
     while @thread_api.alive? do
       @led_indicador.actualizar

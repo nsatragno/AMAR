@@ -7,21 +7,18 @@ module ES
     def initialize(pin_rs, pin_e, pins_db)
       throw "RS pin required" unless pin_rs
       throw "E pin required" unless pin_e
-      throw "DB pin required" unless pin_db
-      throw "DB pin should be an array" unless pins_db.respond_to :length
+      throw "DB pin required" unless pins_db
+      throw "DB pin should be an array" unless pins_db.respond_to? :length
       throw "DB pin should have four elements" unless pins_db.length == 4
 
       @pin_rs = pin_rs
       @pin_e = pin_e
       @pins_db = pins_db
 
-        RPi::GPIO.setmode(RPi::GPIO.BCM)
-        RPi::GPIO.setup(@pin_e, RPi::GPIO.OUT)
-        RPi::GPIO.setup(@pin_rs, RPi::GPIO.OUT)
-        @pins_db.each do |pin|
-            RPi::GPIO.setup(pin, RPi::GPIO.OUT)
-        end
-        clear
+      [ @pin_rs, @pin_e, *@pins_db ].each do |pin|
+        RPi::GPIO.setup pin, :as => :output
+      end
+      clear
     end
 
     # Blank / reset LCD.
@@ -35,25 +32,29 @@ module ES
     end
 
     # Send command to LCD.
-    def cmd(bits, char_mode = false):
+    def cmd(bits, char_mode = false)
       sleep COMMAND_SLEEP_TIME
       bitarray = bits.to_s(2).rjust 8, '0'
 
-      RPi::GPIO.output(@pin_rs, char_mode)
+      if char_mode
+        RPi::GPIO.set_high @pin_rs
+      else
+        RPi::GPIO.set_low @pin_rs
+      end
 
       printAll = Proc.new do |offset|
         @pins_db.each do |pin|
-          RPi::GPIO.output(pin, false)
+          RPi::GPIO.set_low pin
         end
 
         (0..3).each do |i|
           if bitarray[i + offset] == "1"
-            RPi::GPIO.output(@pins_db[3 - i], true)
+            RPi::GPIO.set_high @pins_db[3 - i]
           end
         end
 
-        RPi::GPIO.output(@pin_e, true)
-        RPi::GPIO.output(@pin_e, false)
+        RPi::GPIO.set_high @pin_e
+        RPi::GPIO.set_low @pin_e
       end
 
       printAll.call 0
@@ -61,9 +62,9 @@ module ES
     end
 
     # Send string to LCD. Newline wraps to second line.
-    def message(text):
+    def message(text)
       text.chars.each do |char|
-        if char == '\n'
+        if char == "\n"
           cmd 0xC0 # next line
         else
           cmd char.ord, true

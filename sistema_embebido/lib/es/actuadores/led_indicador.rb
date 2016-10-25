@@ -12,7 +12,7 @@ module ES
     # Valores mínimos y máximos posibles para el ciclo de trabajo de la señal
     # PWM.
     CICLO_TRABAJO_MIN = 0
-    CICLO_TRABAJO_MAX = 20
+    CICLO_TRABAJO_MAX = 100
 
     # Número por el que se incrementa el ciclo de trabajo en cada iteración.
     PASO = 1
