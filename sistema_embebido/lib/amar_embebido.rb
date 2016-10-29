@@ -19,6 +19,8 @@ class Amar
 
     @led_indicador = ES::LedIndicador.new
     @display = ES::Display.new
+    Planificacion.set_display @display
+    Planificacion.cargar!
   end
 
   # Ejecuta la aplicación.
@@ -30,8 +32,7 @@ class Amar
       API::Servidor.run!
     end
 
-    @display.mensaje1 "Algo que tiene mas de 16 caracteres y deberia scrollear"
-    @display.mensaje2 "Humano con askljsand klsajd lksadj alksd j"
+    @display.mensaje1 "Hola humano"
 
     while @thread_api.alive? do
       @led_indicador.actualizar

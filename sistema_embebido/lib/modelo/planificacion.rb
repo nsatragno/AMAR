@@ -1,5 +1,11 @@
 # Maneja los horarios en los que se alimenta a la mascota.
 class Planificacion
+  ARCHIVO_PLANIFICACION = '/var/amar/planificacion'
+
+  def self.set_display(display)
+    @@display = display
+  end
+
   def self.planificaciones
     @@planificaciones ||= []
   end
@@ -20,6 +26,15 @@ class Planificacion
                                               .split(",").map do |string|
       Planificacion.new string
     end
+    @@display.mensaje2 "Horarios: " + planificaciones_to_s
+  end
+
+  def self.guardar!
+    File.write ARCHIVO_PLANIFICACION, planificaciones_to_s
+  end
+
+  def self.cargar!
+    generar_planificaciones File.read ARCHIVO_PLANIFICACION
   end
 
   attr_reader :hora
@@ -31,6 +46,6 @@ class Planificacion
   end
 
   def to_s
-    "%02d_%02d" % [@hora, @minuto]
+    "%02d:%02d" % [@hora, @minuto]
   end
 end
