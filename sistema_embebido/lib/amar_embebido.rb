@@ -30,8 +30,8 @@ class Amar
       API::Servidor.run!
     end
 
-    @display.mensaje1 "Bienvenido"
-    @display.mensaje2 "Humano"
+    @display.mensaje1 "Algo que tiene mas de 16 caracteres y deberia scrollear"
+    @display.mensaje2 "Humano con askljsand klsajd lksadj alksd j"
 
     while @thread_api.alive? do
       @led_indicador.actualizar

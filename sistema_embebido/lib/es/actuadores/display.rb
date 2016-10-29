@@ -13,12 +13,12 @@ module ES
 
     def mensaje1(string)
       @mensaje1 = string
-      @offset1 = 0
+      @offset1 = [0]
     end
 
     def mensaje2(string)
       @mensaje2 = string
-      @offset2 = 0
+      @offset2 = [0]
     end
 
     def actualizar
@@ -33,8 +33,9 @@ module ES
         if mensaje.length <= TAM_MAX
           send += mensaje.center TAM_MAX, ' '
         else
-          send += mensaje.slice offset, TAM_MAX
-          offset += 1
+          send += mensaje.slice offset[0], TAM_MAX
+          offset[0] += 1
+          offset[0] = 0 if offset[0] >= mensaje.length
         end
       end
 
