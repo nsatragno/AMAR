@@ -1,7 +1,5 @@
 module ES
   class Barrera
-    attr_reader :nivel
-
     def initialize
       RPi::GPIO.setup GPIO_FOTOTRANSISTOR, :as => :input, :pull => :down
       RPi::GPIO.setup GPIO_EMISOR_IR, :as => :output
