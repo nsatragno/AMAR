@@ -1,7 +1,7 @@
 module ES
   class Motor
     # Duración de un pulso en ciclos de la aplicación.
-    DURACION = 10
+    DURACION = 40
 
     def initialize
       RPi::GPIO.setup GPIO_RELAY, :as => :output
@@ -12,7 +12,7 @@ module ES
     end
 
     # Registra que se debe realizar un pulso.
-    def pulso!
+    def pulsar!
       @ticks = DURACION
     end
 

@@ -25,7 +25,7 @@ class Amar
     @barrera = ES::Barrera.new
     @sensor_movimiento = ES::SensorMovimiento.new
     @display = ES::Display.new
-    @planificacion = Planificacion.new @display
+    @planificacion = Planificacion.new @display, @motor
     Estado.instance.display = @display
   end
 
@@ -43,7 +43,6 @@ class Amar
       # Primero se actualizan los sensores.
       @barrera.actualizar
       @sensor_movimiento.actualizar
-      @planificacion.actualizar
 
       # Luego los actuadores.
       @motor.actualizar
