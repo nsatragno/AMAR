@@ -51,7 +51,6 @@ class Planificacion
         @motor.pulsar!
       end
     end
-    @jobs.each { |job| p job }
   end
 
   def guardar!
