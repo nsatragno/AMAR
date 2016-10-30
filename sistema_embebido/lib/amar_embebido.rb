@@ -1,6 +1,8 @@
 require "./lib/api/servidor.rb"
 require "./lib/es/actuadores/display"
 require "./lib/es/actuadores/led_indicador"
+require "./lib/es/sensores/barrera"
+require "./lib/es/sensores/movimiento"
 require "./lib/modelo/estado"
 require "./lib/modelo/planificacion"
 
@@ -18,8 +20,11 @@ class Amar
     RPi::GPIO.set_numbering :bcm
 
     @led_indicador = ES::LedIndicador.new
+    @barrera = ES::Barrera.new
+    @sensor_movimiento = ES::SensorMovimiento.new
     @display = ES::Display.new
-    Planificacion.set_display @display
+    Planificacion.display = @display
+    Estado.instance.display = @display
     Planificacion.cargar!
   end
 
@@ -36,6 +41,9 @@ class Amar
 
     while @thread_api.alive? do
       @led_indicador.actualizar
+      @barrera.actualizar
+      @sensor_movimiento.actualizar
+      Estado.instance.actualizar
       @display.actualizar
       sleep TIEMPO_SLEEP
     end

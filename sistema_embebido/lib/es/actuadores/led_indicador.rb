@@ -20,10 +20,10 @@ module ES
     # Inicializa el indicador.
     def initialize
       # Inicializo el puerto GPIO en salida PWM.
-      RPi::GPIO.setup ES::GPIO_PWM, :as => :output
-      RPi::GPIO.set_low ES::GPIO_PWM
+      RPi::GPIO.setup GPIO_PWM, :as => :output
+      RPi::GPIO.set_low GPIO_PWM
 
-      @puerto = RPi::GPIO::PWM.new(ES::GPIO_PWM, FRECUENCIA)
+      @puerto = RPi::GPIO::PWM.new(GPIO_PWM, FRECUENCIA)
 
       # Número que se suma al ciclo de trabajo actual.
       @delta = PASO

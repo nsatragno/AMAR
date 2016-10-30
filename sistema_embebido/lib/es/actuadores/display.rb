@@ -6,17 +6,20 @@ module ES
     TAM_MAX = 16
 
     def initialize
-      @handler = HD44780.new 17, 27, [22, 10, 9, 11]
+      @handler = HD44780.new GPIO_RS, GPIO_E,
+                             [GPIO_LED1, GPIO_LED2, GPIO_LED3, GPIO_LED4]
       @contador = 0
       @send_anterior = ""
     end
 
     def mensaje1(string)
+      return if @mensaje1 == string
       @mensaje1 = string
       @offset1 = [0]
     end
 
     def mensaje2(string)
+      return if @mensaje2 == string
       @mensaje2 = string
       @offset2 = [0]
     end

@@ -2,7 +2,7 @@
 class Planificacion
   ARCHIVO_PLANIFICACION = '/var/amar/planificacion'
 
-  def self.set_display(display)
+  def self.display=(display)
     @@display = display
   end
 
