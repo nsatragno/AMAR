@@ -21,6 +21,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
+    rufus-scheduler (3.2.2)
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -37,6 +38,7 @@ PLATFORMS
 DEPENDENCIES
   rpi_gpio
   rspec
+  rufus-scheduler
   sinatra
   thin
 

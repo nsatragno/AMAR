@@ -4,6 +4,10 @@ module API
 
   # Proporciona una API sencilla para la conexión con el cliente de Android.
   class Servidor < Sinatra::Base
+    def self.planificacion=(planificacion)
+      @@planificacion = planificacion
+    end
+
     set :bind, '0.0.0.0'
     set :port, '3000'
 
@@ -20,12 +24,12 @@ module API
     end
 
     get '/planificacion' do
-      Planificacion.planificaciones_to_s
+      @@planificacion.to_s
     end
 
     post '/planificacion' do
-      Planificacion.generar_planificaciones params[:planificacion]
-      Planificacion.guardar!
+      @@planificacion.from_s! params[:planificacion]
+      @@planificacion.guardar!
       "'OK'"
     end
   end

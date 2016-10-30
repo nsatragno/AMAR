@@ -1,51 +1,39 @@
+require './lib/modelo/momento'
+
 # Maneja los horarios en los que se alimenta a la mascota.
 class Planificacion
   ARCHIVO_PLANIFICACION = '/var/amar/planificacion'
 
-  def self.display=(display)
-    @@display = display
+  attr_reader :momentos
+
+  def initialize(display)
+    @display = display
+    from_s! File.read ARCHIVO_PLANIFICACION
   end
 
-  def self.planificaciones
-    @@planificaciones ||= []
+  def actualizar
   end
 
-  def self.planificaciones_to_s
-    if planificaciones.empty?
+  def to_s
+    if @momentos.empty?
       return ""
     end
-    Planificacion.planificaciones.map do |planificacion|
-      planificacion.to_s
+    @momentos.map do |momento|
+      momento.to_s
     end.reduce do |s1, s2|
       s1 + ", " + s2
     end
   end
 
-  def self.generar_planificaciones(string_planificaciones)
-    @@planificaciones = string_planificaciones.gsub(" ", "")
-                                              .split(",").map do |string|
-      Planificacion.new string
+  def from_s!(s_momentos)
+    @momentos = s_momentos.gsub(" ", "")
+                          .split(",").map do |string|
+      Momento.new string
     end
-    @@display.mensaje2 "Horarios: " + planificaciones_to_s
+    @display.mensaje2 "Horarios: " + to_s
   end
 
-  def self.guardar!
-    File.write ARCHIVO_PLANIFICACION, planificaciones_to_s
-  end
-
-  def self.cargar!
-    generar_planificaciones File.read ARCHIVO_PLANIFICACION
-  end
-
-  attr_reader :hora
-  attr_reader :minuto
-
-  def initialize(string)
-    @hora = (string.slice 0, 2).to_i
-    @minuto = (string.slice 3, 5).to_i
-  end
-
-  def to_s
-    "%02d:%02d" % [@hora, @minuto]
+  def guardar!
+    File.write ARCHIVO_PLANIFICACION, to_s
   end
 end

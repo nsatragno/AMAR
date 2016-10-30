@@ -9,5 +9,8 @@ gem "thin"
 # Controla los puertos GPIO de la Raspberry Pi.
 gem "rpi_gpio"
 
+# Maneja la planificación.
+gem 'rufus-scheduler'
+
 # Testing.
 gem "rspec"
