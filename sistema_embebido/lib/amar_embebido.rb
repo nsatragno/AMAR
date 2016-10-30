@@ -36,6 +36,7 @@ class Amar
     # Se ejecuta la API en background.
     @thread_api = Thread.new do
       API::Servidor.planificacion = @planificacion
+      API::Servidor.motor = @motor
       API::Servidor.run!
     end
 

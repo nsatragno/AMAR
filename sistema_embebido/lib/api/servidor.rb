@@ -8,6 +8,10 @@ module API
       @@planificacion = planificacion
     end
 
+    def self.motor=(motor)
+      @@motor = motor
+    end
+
     set :bind, '0.0.0.0'
     set :port, '3000'
 
@@ -20,7 +24,7 @@ module API
     end
 
     post '/alimentar' do
-      '"OK"'
+      @@motor.pulsar!
     end
 
     get '/planificacion' do

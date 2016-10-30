@@ -17,7 +17,7 @@ module ES
     end
 
     def actualizar
-      if @ticks > 0
+      if @ticks > 0 and not Estado.instance.detecta_movimiento
         @ticks -= 1
         RPi::GPIO.set_high GPIO_RELAY
       else
