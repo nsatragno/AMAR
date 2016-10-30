@@ -11,23 +11,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="amar.petsfeeder.IPConfigActivity">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="135dp"
-        android:id="@+id/editTextIPAddress"
-        android:singleLine="false"
-        android:inputType="text"
-        android:textSize="24sp" />
-
     <TextView
         android:text="Ingrese la IP del dispositivo al que desea conectarse."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewIPAddress"
+        android:id="@+id/textView3"
         android:layout_marginTop="56dp"
         android:textSize="24sp"
         android:textAlignment="center"
@@ -35,19 +23,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textStyle="normal|bold" />
-
-    <CheckBox
-        android:text="Recordar esta IP."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextIPAddress"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="35dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="39dp"
-        android:id="@+id/checkBoxIPAddress"
-        android:textSize="24sp" />
 
     <Button
         android:text="¡Ayuda!"
@@ -71,7 +46,18 @@
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/checkBoxIPAddress"
         android:layout_alignStart="@+id/checkBoxIPAddress"
+        android:onClick="onAceptar"
         android:layout_marginBottom="37dp" />
+
+    <CheckBox
+        android:text="Recordar esta IP."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxIPAddress"
+        android:textSize="24sp"
+        android:layout_alignLeft="@+id/editTextIPAddress"
+        android:layout_alignStart="@+id/editTextIPAddress"
+        android:layout_above="@+id/imageViewWorriedMaxJPG" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -79,7 +65,31 @@
         app:srcCompat="@drawable/worriedmax_120x120"
         android:id="@+id/imageViewWorriedMaxJPG"
         android:layout_above="@+id/buttonIPAddressHelp"
-        android:layout_alignRight="@+id/editTextIPAddress"
-        android:layout_alignEnd="@+id/editTextIPAddress" />
+        android:layout_toRightOf="@+id/checkBoxIPAddress"
+        android:layout_toEndOf="@+id/checkBoxIPAddress" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewErrorIP"
+        android:layout_marginTop="18dp"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textStyle="normal|bold"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/editTextIPAddress"
+        android:singleLine="false"
+        android:inputType="text"
+        android:textSize="24sp"
+        android:layout_below="@+id/textViewErrorIP"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
 
 </RelativeLayout>

@@ -10,6 +10,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="amar.petsfeeder.MainActivity">
 
+    <Button
+        android:text="Alimentar ahora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonMainAlimentar"
+        android:layout_below="@+id/buttonMainIPConfig"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:textSize="18sp"
+        android:onClick="alimentar" />
+
     <TextView
         android:text="¡Bienvenido, humano!"
         android:layout_width="wrap_content"
@@ -35,18 +46,6 @@
         android:onClick="openHistory"/>
 
     <Button
-        android:text="Horarios"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:id="@+id/buttonMainTimeScheduler"
-        android:layout_below="@+id/textViewMain"
-        android:layout_centerHorizontal="true"
-        android:textSize="18sp"
-        android:onClick="openTimeSchedule"
-        />
-
-    <Button
         android:text="Configurar IP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,24 +57,34 @@
         android:onClick="openIPConfig"/>
 
     <Button
-        android:text="Acerca de..."
+        android:text="Horarios"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonMainAbout"
-        android:layout_below="@+id/buttonMainIPConfig"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="14dp"
+        android:id="@+id/buttonMainTimeScheduler"
         android:textSize="18sp"
-        android:onClick="openAbout"
-        />
+        android:onClick="openTimeSchedule"
+        android:layout_below="@+id/textViewMain"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:text="Salir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/buttonMainExit"
-        android:layout_below="@+id/buttonMainAbout"
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp"
-        android:textSize="18sp" />
+        android:layout_marginBottom="11dp" />
+
+    <Button
+        android:text="Acerca de..."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonMainAbout"
+        android:textSize="18sp"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/buttonMainAlimentar"
+        android:layout_centerHorizontal="true"
+        android:onClick="openAbout (MainActivity)" />
 </RelativeLayout>
