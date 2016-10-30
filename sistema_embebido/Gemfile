@@ -8,6 +8,7 @@ gem "thin"
 
 # Controla los puertos GPIO de la Raspberry Pi.
 gem "rpi_gpio"
+gem "rpi-hd44780"
 
 # Maneja la planificación.
 gem 'rufus-scheduler'

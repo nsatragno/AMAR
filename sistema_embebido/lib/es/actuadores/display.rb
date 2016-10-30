@@ -1,4 +1,4 @@
-require "./lib/es/hd44780"
+require "rpi/hd44780"
 
 module ES
   # Maneja el display LED del alimentador.
@@ -6,8 +6,8 @@ module ES
     TAM_MAX = 16
 
     def initialize
-      @handler = HD44780.new GPIO_RS, GPIO_E,
-                             [GPIO_LED1, GPIO_LED2, GPIO_LED3, GPIO_LED4]
+      @handler = RPi::HD44780.new GPIO_RS, GPIO_E,
+                                  [GPIO_LED1, GPIO_LED2, GPIO_LED3, GPIO_LED4]
       @contador = 0
       @send_anterior = ""
     end
