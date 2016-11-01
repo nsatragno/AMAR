@@ -1,4 +1,7 @@
 # AMAR
+
+![Logo AMAR](amar.png)
+
 Alimentador de Mascotas Automático con Raspberry pi.
 
 Un proyecto para la cátedra de Sistemas Operativos Avanzados, de la Universidad
