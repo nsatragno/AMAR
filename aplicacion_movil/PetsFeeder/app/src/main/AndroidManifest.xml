@@ -23,7 +23,6 @@
             android:label="Acerca de..."
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity android:name=".HistoryActivity" />
-        <activity android:name=".TimeSettings" />
         <activity android:name=".TimeSchedule" />
         <activity android:name=".TimePicker"></activity>
     </application>

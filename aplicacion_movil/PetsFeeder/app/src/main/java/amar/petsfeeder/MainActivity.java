@@ -67,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void openTimeSettings(View view){
-        Intent i = new Intent(this, TimeSettings.class);
+    public void openTimeSchedule(View view){
+        Intent i = new Intent(this, TimeSchedule.class);
         startActivity(i);
     }
 }

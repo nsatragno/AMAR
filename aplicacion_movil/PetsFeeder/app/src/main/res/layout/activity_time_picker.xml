@@ -19,7 +19,7 @@
         <TimePicker
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/timePicker2" />
+            android:id="@+id/timePicker" />
 
         <LinearLayout
             android:orientation="vertical"
