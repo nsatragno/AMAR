@@ -21,7 +21,11 @@ class Estado
       if @detecta_movimiento
         @display.mensaje1 "Movimiento detectado"
       else
-        @display.mensaje1 "Hola humano"
+        if @plato_lleno
+          @display.mensaje1 "Plato lleno"
+        else
+          @display.mensaje1 "Hola humano"
+        end
       end
     else
       @display.mensaje1 "Llename"

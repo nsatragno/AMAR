@@ -13,6 +13,7 @@ module ES
 
     # Registra que se debe realizar un pulso.
     def pulsar!
+      return if Estado.instance.plato_lleno
       @ticks = DURACION
     end
 

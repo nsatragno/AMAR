@@ -4,6 +4,7 @@ require "./lib/es/actuadores/led_indicador"
 require "./lib/es/actuadores/motor"
 require "./lib/es/sensores/barrera"
 require "./lib/es/sensores/movimiento"
+require "./lib/es/sensores/peso"
 require "./lib/modelo/estado"
 require "./lib/modelo/planificacion"
 
@@ -24,6 +25,7 @@ class Amar
     @motor = ES::Motor.new
     @barrera = ES::Barrera.new
     @sensor_movimiento = ES::SensorMovimiento.new
+    @sensor_peso = ES::SensorPeso.new
     @display = ES::Display.new
     @planificacion = Planificacion.new @display, @motor
     Estado.instance.display = @display
@@ -44,6 +46,7 @@ class Amar
       # Primero se actualizan los sensores.
       @barrera.actualizar
       @sensor_movimiento.actualizar
+      @sensor_peso.actualizar
 
       # Luego los actuadores.
       @motor.actualizar

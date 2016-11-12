@@ -20,4 +20,7 @@ module ES
 
   # Relay al motor.
   GPIO_RELAY = 24
+
+  # Switch de sensor de peso.
+  GPIO_PESO = 23
 end
