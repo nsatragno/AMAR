@@ -43,7 +43,8 @@
         android:layout_alignStart="@+id/buttonMainTimeScheduler"
         android:layout_marginTop="23dp"
         android:textSize="18sp"
-        android:onClick="openHistory"/>
+        android:onClick="openTimeSettings"/>
+         <!--android:onClick="openTimeSettings"/>-->
 
     <Button
         android:text="Configurar IP"

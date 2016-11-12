@@ -56,10 +56,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void openTimeSchedule(View view){
-        Intent i = new Intent(this, TimeScheduleActivity.class);
-        startActivity(i);
-    }
 
     public void openIPConfig(View view){
         Intent i = new Intent(this, IPConfigActivity.class);
@@ -71,4 +67,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void openTimeSettings(View view){
+        Intent i = new Intent(this, TimeSettings.class);
+        startActivity(i);
+    }
 }

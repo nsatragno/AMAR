@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="amar.petsfeeder">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,28 +13,19 @@
         <activity android:name=".IPConfigActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".TimeConfigActivity"
-            android:label="@string/title_activity_time_config"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity
-            android:name=".TimeScheduleActivity"
-            android:label="@string/title_activity_time_schedule"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".AboutActivity"
             android:label="Acerca de..."
-            android:theme="@style/Theme.AppCompat.Dialog">
-        </activity>
-        <activity android:name=".HistoryActivity">
-        </activity>
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity android:name=".HistoryActivity" />
+        <activity android:name=".TimeSettings" />
+        <activity android:name=".TimeSchedule" />
+        <activity android:name=".TimePicker"></activity>
     </application>
 
 </manifest>
