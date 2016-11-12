@@ -107,6 +107,9 @@ public class TimeSchedule extends AppCompatActivity {
 
             @Override
             protected void onPostExecute(String[] horarios) {
+                if (horarios == null) {
+                    return;
+                }
                 for (int i = 0; i < horarios.length; ++i) {
                     String horario = horarios[i].trim();
                     if(horario.isEmpty()){

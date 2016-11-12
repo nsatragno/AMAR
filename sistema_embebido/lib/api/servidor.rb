@@ -20,7 +20,7 @@ module API
     end
 
     get '/estado' do
-      Estado.instance.to_json
+      Estado.instance.to_s
     end
 
     post '/alimentar' do

@@ -24,50 +24,6 @@
         android:layout_alignParentStart="true"
         android:textStyle="normal|bold" />
 
-    <Button
-        android:text="¡Ayuda!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="43dp"
-        android:layout_marginEnd="43dp"
-        android:id="@+id/buttonIPAddressHelp"
-        android:textSize="18sp"
-        android:layout_alignBaseline="@+id/buttonIPAddressOK"
-        android:layout_alignBottom="@+id/buttonIPAddressOK"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:text="Aceptar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonIPAddressOK"
-        android:textSize="18sp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/checkBoxIPAddress"
-        android:layout_alignStart="@+id/checkBoxIPAddress"
-        android:onClick="onAceptar"
-        android:layout_marginBottom="37dp" />
-
-    <CheckBox
-        android:text="Recordar esta IP."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBoxIPAddress"
-        android:textSize="24sp"
-        android:layout_alignLeft="@+id/editTextIPAddress"
-        android:layout_alignStart="@+id/editTextIPAddress"
-        android:layout_above="@+id/imageViewWorriedMaxJPG" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/worriedmax_120x120"
-        android:id="@+id/imageViewWorriedMaxJPG"
-        android:layout_above="@+id/buttonIPAddressHelp"
-        android:layout_toRightOf="@+id/checkBoxIPAddress"
-        android:layout_toEndOf="@+id/checkBoxIPAddress" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -91,5 +47,17 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:inputType="phone" />
+
+    <Button
+        android:text="Aceptar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonIPAddressOK"
+        android:textSize="18sp"
+        android:onClick="onAceptar"
+        android:layout_marginBottom="44dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/editTextIPAddress"
+        android:layout_alignEnd="@+id/editTextIPAddress" />
 
 </RelativeLayout>

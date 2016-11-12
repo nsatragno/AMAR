@@ -28,11 +28,7 @@ class Estado
     end
   end
 
-  def to_json
-    "{\n" +
-      "recipiente_lleno: #{@recipiente_lleno},\n" +
-      "plato_lleno: #{@plato_lleno},\n" +
-      "detecta_movimiento: #{@detecta_movimiento}\n" +
-    "}"
+  def to_s
+    "#{@recipiente_lleno}_#{@plato_lleno}_#{@detecta_movimiento}"
   end
 end

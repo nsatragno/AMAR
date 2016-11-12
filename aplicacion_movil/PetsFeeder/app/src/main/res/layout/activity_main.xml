@@ -10,80 +10,68 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="amar.petsfeeder.MainActivity">
 
-    <Button
-        android:text="Alimentar ahora"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonMainAlimentar"
-        android:layout_below="@+id/buttonMainIPConfig"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:textSize="18sp"
-        android:onClick="alimentar" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:text="¡Bienvenido, humano!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewMain"
-        android:textSize="24sp"
-        android:textStyle="normal|bold"
-        android:textAlignment="center"
-        android:layout_marginTop="27dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        <TextView
+            android:text="¡Bienvenido, humano!"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewMain"
+            android:textSize="24sp"
+            android:textStyle="normal|bold"
+            android:textAlignment="center"
+            android:layout_marginTop="27dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp" />
 
-    <Button
-        android:text="Historial"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonMainHistory"
-        android:layout_below="@+id/buttonMainTimeScheduler"
-        android:layout_alignLeft="@+id/buttonMainTimeScheduler"
-        android:layout_alignStart="@+id/buttonMainTimeScheduler"
-        android:layout_marginTop="23dp"
-        android:textSize="18sp" />
+        <Button
+            android:text="Horarios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonMainTimeScheduler"
+            android:textSize="18sp"
+            android:onClick="openTimeSchedule"
+            android:layout_below="@+id/textViewMain"
+            android:layout_centerHorizontal="true" />
 
-    <Button
-        android:text="Configurar IP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonMainIPConfig"
-        android:layout_marginTop="31dp"
-        android:layout_below="@+id/buttonMainHistory"
-        android:layout_centerHorizontal="true"
-        android:textSize="18sp"
-        android:onClick="openIPConfig"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <Button
-        android:text="Horarios"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:id="@+id/buttonMainTimeScheduler"
-        android:textSize="18sp"
-        android:onClick="openTimeSchedule"
-        android:layout_below="@+id/textViewMain"
-        android:layout_centerHorizontal="true" />
+        <Button
+            android:text="Alimentar ahora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonMainAlimentar"
+            android:layout_below="@+id/buttonMainIPConfig"
+            android:layout_centerHorizontal="true"
+            android:textSize="18sp"
+            android:onClick="alimentar" />
 
-    <Button
-        android:text="Salir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonMainExit"
-        android:textSize="18sp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="11dp" />
+        <Button
+            android:text="Configurar IP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonMainIPConfig"
+            android:layout_below="@+id/buttonMainHistory"
+            android:layout_centerHorizontal="true"
+            android:textSize="18sp"
+            android:onClick="openIPConfig"/>
 
-    <Button
-        android:text="Acerca de..."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonMainAbout"
-        android:textSize="18sp"
-        android:layout_marginTop="19dp"
-        android:layout_below="@+id/buttonMainAlimentar"
-        android:layout_centerHorizontal="true"
-        android:onClick="openAbout (MainActivity)" />
+        <Button
+            android:text="Acerca de"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonMainAbout"
+            android:textSize="18sp"
+            android:layout_below="@+id/buttonMainAlimentar"
+            android:layout_centerHorizontal="true"
+            android:onClick="openAbout" />
+
+    </LinearLayout>
+
 </RelativeLayout>

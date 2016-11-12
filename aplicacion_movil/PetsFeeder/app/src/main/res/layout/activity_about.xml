@@ -11,7 +11,7 @@
     tools:context="amar.petsfeeder.AboutActivity">
 
     <TextView
-        android:text="Esta aplicación ha sido desarrollado para el proyecto AMAR de la cátedra de SOA UNLAM."
+        android:text="Esta aplicación ha sido desarrollada para el proyecto AMAR de la cátedra de SOA UNLAM."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
