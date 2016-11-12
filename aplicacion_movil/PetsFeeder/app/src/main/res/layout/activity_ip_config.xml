@@ -86,10 +86,10 @@
         android:ems="10"
         android:id="@+id/editTextIPAddress"
         android:singleLine="false"
-        android:inputType="text"
         android:textSize="24sp"
         android:layout_below="@+id/textViewErrorIP"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:inputType="phone" />
 
 </RelativeLayout>

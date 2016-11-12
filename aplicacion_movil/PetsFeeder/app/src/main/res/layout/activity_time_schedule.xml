@@ -25,7 +25,7 @@
             android:layout_height="77dp">
 
             <TextView
-                android:text="TextView"
+                android:text="HH:MM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textViewTimeSchedule1"
@@ -53,7 +53,7 @@
             android:layout_height="72dp">
 
             <TextView
-                android:text="TextView"
+                android:text="HH:MM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textViewTimeSchedule2"
@@ -85,7 +85,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textViewTimeSchedule3"
                 android:layout_weight="5"
-                tools:text="HH:MM" />
+                tools:text="HH:MM"
+                android:text="HH:MM" />
 
             <Button
                 android:text="Editar"
@@ -98,7 +99,7 @@
                 android:text="ToggleButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/toggleButton3"
+                android:id="@+id/toggleButtonTimeSchedule3"
                 android:layout_weight="1" />
 
         </LinearLayout>
