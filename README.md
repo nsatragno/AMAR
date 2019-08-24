@@ -15,4 +15,4 @@ Nacional de la Matanza.
 
 * Ignacio Wasinger <nacho_35_18@hotmail.com>
 
-* Nicolás Satragno <nsatragno@gmail.com>
+* Nina Satragno <nsatragno@gmail.com>
